@@ -1,0 +1,19 @@
+This is a file to test with the ignore words file and hope it works. I need a short file for this
+
+after
+again
+ago
+all
+almost
+along
+already
+also
+although
+always
+am
+among
+an
+and
+another
+any
+test
