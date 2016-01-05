@@ -1,19 +1,5 @@
-This is a file to test with the ignore words file and hope it works. I need a short file for this
+This is a file to test with the ignore words file and hope it works. I need a short file for this to wok properly as it takes ages for the results 
+all the best here and car jet boat plane boat plane boat display a visual summary of the most prominent words used on a web page, a news forum or
+a social media web site. A word-cloud is comprised of a set of tags, with each tag
+representing a single word. The prominence 
 
-after
-again
-ago
-all
-almost
-along
-already
-also
-although
-always
-am
-among
-an
-and
-another
-any
-test

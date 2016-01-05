@@ -5,7 +5,6 @@ import java.util.Map;
 
 public class IgnoreWords implements Ignorable {
 	
-	//Map<String, Integer> newMapp;
 	
 	public Map<String,Integer> removeIgnoreWords(Map<String, Integer> map, Collection<String> col){
 		

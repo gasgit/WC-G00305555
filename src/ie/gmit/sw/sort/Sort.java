@@ -8,6 +8,7 @@ public class Sort {
 	
 	
 	private Freqable freq;
+	
 	private Ignorable ignore;
 	
 	
@@ -22,8 +23,6 @@ public class Sort {
 	}
 
 
-	
-	
 	public Map<String, Integer> removeIgnoreWords(Map<String, Integer> map, Collection<String> col) {
 		return ignore.removeIgnoreWords(map, col);
 	}
