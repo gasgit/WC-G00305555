@@ -13,10 +13,7 @@ public class FileParser implements Strategy{
 	private static final int CHAR_MIN = 65;
 	private static final int CHAR_MAX = 122;
 	
-	/* (non-Javadoc)
-	 * @see ie.gmit.sw.fileParsable#parseFile(java.lang.String)
-	 */
-	@Override
+	
 	public Collection<String> parseFile(String file) throws IOException{
 		
 		Collection<String> myCol = new ArrayList<>();

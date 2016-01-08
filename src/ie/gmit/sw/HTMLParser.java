@@ -9,31 +9,53 @@ import org.jsoup.nodes.Document;
 
 public class HTMLParser implements Strategy {
 	
-	private List<String> ls = new ArrayList<String>();
+	private static final int CHAR_MIN = 65;
+	private static final int CHAR_MAX = 122;
 
 	
-	public List<String> parseHTML(String address) throws IOException{
+	public Collection<String> parseHTML(String address) throws IOException{
 		
-      
+		Collection<String> hCol = new ArrayList<>();
+		
 		Document doc = Jsoup.connect(address).get();  
 		
 		String str = Jsoup.parse(doc.toString()).text();
 		
 		String[] words = str.split("\\s+");
+		
+		
 		for (int i = 0; i < words.length; i++) {
-		   
-		    words[i] = words[i].replaceAll("[^\\w]", "");
+		   			
+			words[i] = words[i].replaceAll("[^\\w]", "")
+								.replaceAll("[^\\D]", "");
+								
+
+			String nxtWord = process(words[i]);
+			if(nxtWord != null){
+				hCol.add(nxtWord);
+			}
+			
+			
 		}
 		
-		
-		for(String wrd : words){
-			ls.add(wrd);
+
+
+	 return hCol;  
+
+}  
+	private String process(String s){
+		String word = s.trim().toLowerCase();
+		StringBuffer sb = new StringBuffer();
+		for(int i=0; i<word.length();i++){
+			if((word.charAt(i)>=CHAR_MIN && word.charAt(i)<= CHAR_MAX )
+					||( word.charAt(i)>=48 && word.charAt(i)<=57)){
+				sb.append(word.charAt(i));
+			}
+			else{
+				break;
+			}
 		}
-
-
-
-	 return ls;  
-
+		return sb.toString();
 }
 
 

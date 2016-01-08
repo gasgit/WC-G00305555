@@ -2,10 +2,9 @@ package ie.gmit.sw;
 
 import java.io.IOException;
 import java.util.Collection;
-import java.util.List;
 import java.util.Map;
 
-import ie.gmit.sw.paint.Drawing;
+import ie.gmit.sw.paint.CreateImage;
 import ie.gmit.sw.sort.FrequencyCounter;
 import ie.gmit.sw.sort.IgnoreWords;
 import ie.gmit.sw.sort.Sort;
@@ -14,34 +13,41 @@ public class TestRunner {
 	
 	public static void main(String[] args) throws IOException {
 		
+		
+		// create new fileParser from context
+		
 		Context c = new Context(new FileParser());
-		System.out.println("Test Fle Parser: " + c.parseFile("testTextFile.txt"));
-		Collection<String> textMap = c.parseFile("testTextFile.txt");
-		Collection<String> ignWords = c.parseFile("testIgnoreWordsFile.txt");
 		
-		c = new Context( new HTMLParser());
-		
-		System.out.println("Test HtmlParser: " + c.parseHTML("http://www.irishjobs.ie"));
-		
-		List<String> htmlMap = c.parseHTML("http://www.irishjobs.ie");
-		
-		Sort s = new Sort(new FrequencyCounter());
-		
-		Map<String, Integer> freqMapText = s.freqCountText(textMap);
-		
-		System.out.println("Test FreqMapText: " + freqMapText);
-		
-		Map<String,Integer> freqMapHtml = s.freqCountHTML(htmlMap);
-		System.out.println("Test FreqMapHtml: " + freqMapHtml);
-		
-		s = new Sort(new IgnoreWords());
+		Collection<String> textCollection = c.parseFile("testTextFile.txt");
 		
 		
-		Map<String, Integer> wordsRemoved = s.removeIgnoreWords(freqMapText, ignWords);
-		System.out.println("Test Words Removed: " + wordsRemoved);
+		FrequencyCounter fc = new FrequencyCounter();
+		IgnoreWords ig = new IgnoreWords();
+
+	
+
+		Map<String, Integer> textMap = fc.frequencyCounter(textCollection);
 		
-		Drawing draw = new Drawing();
-		draw.drawMap(wordsRemoved);
+
+		Collection<String> ignWordsColllection = c.parseFile("stopwords.txt");	
+
+
+
+
+//		c = new Context(new HTMLParser());
+//		Collection<String> htmlCollection = c.parseHTML("http://www.thejournal.ie");
+//		Map<String, Integer> htmltMap = fc.frequencyCounter(htmlCollection);
+
+		
+		Map<String, Integer> wordsRemoved = ig.removeIgnoreWords(textMap, ignWordsColllection);
+		
+		
+		System.out.println("Parsed text file:\t " + c.parseFile("testTextFile.txt"));
+		System.out.println("Ignore Words Collection: " + ignWordsColllection);
+		System.out.println("Words Removed: \t\t " + wordsRemoved);
+		
+		CreateImage cimg = new CreateImage();
+		cimg.drawMap(wordsRemoved);
 		
 		
 		

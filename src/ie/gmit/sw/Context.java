@@ -13,7 +13,7 @@ public class Context {
 		this.strat = strat;
 	}
 
-	public List<String> parseHTML(String address) throws IOException {
+	public Collection<String> parseHTML(String address) throws IOException {
 		return strat.parseHTML(address);
 	}
 
@@ -23,26 +23,8 @@ public class Context {
 	
 	
 	
-//	private FileParsable fp;
-//	private HTMLParsable hp;
-//
-//	public Context(HTMLParsable hp) {
-//		super();
-//		this.hp = hp;
-//	}
-//	
-//	public Context(FileParsable fp) {
-//		super();
-//		this.fp = fp;
-//	}
-//	
-//	public Collection<String> parseFile(String file) throws IOException {
-//		return fp.parseFile(file);
-//	}
-//
-//	public List<String> parseHTML(String address) throws IOException {
-//		return hp.parseHTML(address);
-//	}
+
+
 
 
 }

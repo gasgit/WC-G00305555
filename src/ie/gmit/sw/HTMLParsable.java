@@ -1,10 +1,10 @@
 package ie.gmit.sw;
 
 import java.io.IOException;
-import java.util.List;
+import java.util.Collection;
 
 public interface HTMLParsable {
 
-	List<String> parseHTML(String address) throws IOException;
+	Collection<String> parseHTML(String address) throws IOException;
 
 }
