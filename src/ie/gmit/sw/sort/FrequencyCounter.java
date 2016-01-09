@@ -20,8 +20,7 @@ private Map<String,Integer> counted = new TreeMap<>();
 			counted.put(key, Collections.frequency(coll, key));
 					
 		}
-		
-		
+				
 		return counted;
 		
 	}

@@ -45,8 +45,7 @@ public class CreateImage {
 		     
 
 		    if(passedMap.containsValue(value) ){
-		    	
-		  
+		    		  
 		    	int x = rn.nextInt(720);
 				int y = rn.nextInt(480);
 				font = new Font(Font.SANS_SERIF, Font.ITALIC, e.getValue()*10);	
@@ -55,20 +54,25 @@ public class CreateImage {
 				graphics.drawString(e.getKey(), x, y);					
 					
 			}
-		
-    
+		  
 		}
-			
-				
+						
 		graphics.dispose();
 		ImageIO.write(image, "png", new File("image.png"));
-		return passedMap;
+		return null;
 		}
 
+	public BufferedImage getImage() {
+		return image;
+	}
 
-	@Override
+
+	public void setImage(BufferedImage image) {
+		this.image = image;
+	}
+
+
 	protected void finalize() throws Throwable {
-		// TODO Auto-generated method stub
 		super.finalize();
 	}
 		

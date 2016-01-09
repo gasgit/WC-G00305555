@@ -1,8 +1,14 @@
 package ie.gmit.sw;
 
+import java.awt.Graphics;
+import java.awt.image.BufferedImage;
 import java.io.IOException;
 import java.util.Collection;
 import java.util.Map;
+
+import javax.swing.JFrame;
+import javax.swing.JPanel;
+import javax.swing.WindowConstants;
 
 import ie.gmit.sw.paint.CreateImage;
 import ie.gmit.sw.sort.ContextSort;
@@ -16,15 +22,12 @@ public class TestRunner {
 		
 		
 		
-		
 		ContextParse c = new ContextParse(new FileParser());
-		
-		Collection<String> textCollection = c.parseFile("testTextFile.txt");
-		
 		ContextSort cs = new ContextSort(new FrequencyCounter());
-		
 
-		Map<String, Integer> textMap = cs.iNameThisMethodOrUseDelegateMethods(textCollection);
+		
+//		Collection<String> textCollection = c.parseFile("testTextFile.txt");
+//		Map<String, Integer> textMap = cs.iNameThisMethodOrUseDelegateMethods(textCollection);
 		
 
 		Collection<String> ignWordsColllection = c.parseFile("stopwords.txt");	
@@ -37,13 +40,16 @@ public class TestRunner {
 		
 		Map<String, Integer> htmltMap = cs.frequencyCounter(htmlCollection);
 
-		cs = new ContextSort(new IgnoreWords());
 		
 		
 //*****************************************************************************************************************************
 		
+		cs = new ContextSort(new IgnoreWords());
+
 
 		Map<String, Integer> wordsRemoved = cs.removeIgnoreWords(htmltMap, ignWordsColllection);
+		//Map<String, Integer> wordsRemoved = cs.removeIgnoreWords(textMap, ignWordsColllection);
+
 		
 		
 //*****************************************************************************************************************************
@@ -60,11 +66,43 @@ public class TestRunner {
 		cimg.drawMap(wordsRemoved);
 		
 		
+//********************************************************************************************************************		
+		
+        final BufferedImage image = cimg.getImage();
+        
+        JFrame frame = buildFrame();
+
+		
+		
+		JPanel pane = new JPanel() {
+           
+			private static final long serialVersionUID = 1L;
+
+            protected void paintComponent(Graphics g) {
+                super.paintComponent(g);
+                g.drawImage(image, 0, 0, null);
+                
+            }
+        };
+        frame.add(pane);
+
+		
 //*****************************************************************************************************************************
-		
-		
-			
+				
 		
 	}
+	
+	private static JFrame buildFrame() {
+        JFrame frame = new JFrame();
+        frame.setDefaultCloseOperation(WindowConstants.EXIT_ON_CLOSE);
+        frame.setSize(720, 480);
+        frame.setVisible(true);
+        return frame;
+    }
+
+	protected void finalize() throws Throwable {
+		super.finalize();
+	}
+	
 
 }
