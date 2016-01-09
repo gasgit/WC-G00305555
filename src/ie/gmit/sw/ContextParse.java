@@ -4,11 +4,11 @@ import java.io.IOException;
 import java.util.Collection;
 import java.util.List;
 
-public class Context {
+public class ContextParse {
 	
-	private Strategy strat;
+	private StrategyParse strat;
 
-	public Context(Strategy strat) {
+	public ContextParse(StrategyParse strat) {
 		super();
 		this.strat = strat;
 	}
@@ -20,6 +20,14 @@ public class Context {
 	public Collection<String> parseFile(String file) throws IOException {
 		return strat.parseFile(file);
 	}
+
+	protected void finalize() throws Throwable {
+		super.finalize();
+	}
+
+	
+	
+	
 	
 	
 	

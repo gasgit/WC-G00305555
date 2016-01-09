@@ -8,7 +8,7 @@ import java.util.ArrayList;
 import java.util.Collection;
 import java.util.List;
 
-public class FileParser implements Strategy{
+public class FileParser implements StrategyParse{
 	
 	private static final int CHAR_MIN = 65;
 	private static final int CHAR_MAX = 122;

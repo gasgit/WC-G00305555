@@ -3,7 +3,7 @@ package ie.gmit.sw.sort;
 import java.util.Collection;
 import java.util.Map;
 
-public class IgnoreWords  {
+public class IgnoreWords implements StrategySort  {
 	
 	
 	public Map<String,Integer> removeIgnoreWords(Map<String, Integer> map, Collection<String> col){
@@ -13,6 +13,10 @@ public class IgnoreWords  {
 		return map;
 		
 		
+	}
+
+	public Map<String, Integer> frequencyCounter(Collection<String> coll) {
+		return null;
 	}
 	
 

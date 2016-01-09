@@ -7,7 +7,7 @@ import java.util.Map;
 import java.util.Set;
 import java.util.TreeMap;
 
-public class FrequencyCounter  {
+public class FrequencyCounter implements StrategySort  {
 	
 private Map<String,Integer> counted = new TreeMap<>();
 	
@@ -24,6 +24,10 @@ private Map<String,Integer> counted = new TreeMap<>();
 		
 		return counted;
 		
+	}
+
+	public Map<String, Integer> removeIgnoreWords(Map<String, Integer> map, Collection<String> col) {
+		return null;
 	}
 
 }

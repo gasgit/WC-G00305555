@@ -7,7 +7,7 @@ import java.util.List;
 import org.jsoup.Jsoup;
 import org.jsoup.nodes.Document;
 
-public class HTMLParser implements Strategy {
+public class HTMLParser implements StrategyParse {
 	
 	private static final int CHAR_MIN = 65;
 	private static final int CHAR_MAX = 122;
@@ -28,18 +28,14 @@ public class HTMLParser implements Strategy {
 		   			
 			words[i] = words[i].replaceAll("[^\\w]", "")
 								.replaceAll("[^\\D]", "");
-								
-
+							
 			String nxtWord = process(words[i]);
 			if(nxtWord != null){
 				hCol.add(nxtWord);
 			}
-			
-			
+					
 		}
 		
-
-
 	 return hCol;  
 
 }  
@@ -59,9 +55,7 @@ public class HTMLParser implements Strategy {
 }
 
 
-	@Override
 	public Collection<String> parseFile(String file) throws IOException {
-		// TODO Auto-generated method stub
 		return null;
 	}  
 	

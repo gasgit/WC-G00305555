@@ -38,7 +38,7 @@ public class CreateImage {
 			blue = (float)Math.random();
 			Color rdmColor = new Color(red, green,blue);
 			
-		    System.out.printf("String: %-16s  Occurences: %d \t\t Percentage: %.2f%%%n",
+		    System.out.printf("Key: %-16s  Frequency: %d \t\t Percentage: %.2f%%%n",
 		    		e.getKey(), e.getValue(), e.getValue()/total*100);
 
 			Integer value = e.getValue();
