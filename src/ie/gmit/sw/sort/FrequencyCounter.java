@@ -7,9 +7,29 @@ import java.util.Map;
 import java.util.Set;
 import java.util.TreeMap;
 
+
+/**
+ * 
+ * @author glen
+ * 
+ *
+ * 
+ *
+ */
+
+
+
+
 public class FrequencyCounter implements StrategySort  {
 	
-private Map<String,Integer> counted = new TreeMap<>();
+
+	
+	private Map<String,Integer> counted = new TreeMap<>();
+	
+/**
+ *  method to check the frequency of the words in passed collection
+ * 
+ */
 	
 	public Map<String,Integer> frequencyCounter(Collection<String> coll){
 		

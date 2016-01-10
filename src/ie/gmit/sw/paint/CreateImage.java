@@ -1,6 +1,8 @@
 package ie.gmit.sw.paint;
 
 import java.awt.Color;
+
+
 import java.awt.Font;
 import java.awt.Graphics;
 import java.awt.image.BufferedImage;
@@ -13,6 +15,21 @@ import java.util.Random;
 import javax.imageio.ImageIO;
 
 
+/**
+ * @author Glen Gardiner
+ * 
+ * Testing javadocs options
+ * 
+ * 
+ * 
+ * 
+ * */
+
+
+/**
+ * @author glen
+ *
+ */
 public class CreateImage {
 	
 
@@ -22,7 +39,16 @@ public class CreateImage {
 	
 	private  Graphics graphics = image.getGraphics();
 	
-
+/**
+ * drawMap method to pass Map<String,Integer> from wordsRemoved map in TestRunner
+ * 
+ * @param String For the key - word 
+ * @param Integer For the value = frequency of word
+ * @throws IOException If an I/O  error occurs
+ * 
+ * 
+ * 
+ * */
 
 	
 	public Map<String, Integer> drawMap(Map<String, Integer> passedMap) throws IOException{
@@ -38,7 +64,7 @@ public class CreateImage {
 			blue = (float)Math.random();
 			Color rdmColor = new Color(red, green,blue);
 			
-		    System.out.printf("Key: %-16s  Frequency: %d \t\t Percentage: %.2f%%%n",
+		    System.out.printf("Key: %-26s  Frequency: %d \t\t Percentage: %.2f%%%n",
 		    		e.getKey(), e.getValue(), e.getValue()/total*100);
 
 			Integer value = e.getValue();
@@ -61,6 +87,8 @@ public class CreateImage {
 		ImageIO.write(image, "png", new File("image.png"));
 		return null;
 		}
+	
+	
 
 	public BufferedImage getImage() {
 		return image;
