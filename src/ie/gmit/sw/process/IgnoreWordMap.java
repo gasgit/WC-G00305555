@@ -10,8 +10,9 @@ import ie.gmit.sw.sort.IgnoreWords;
 
 /**
  * 
+ * Create wordsRemoved map to store map with ignore words removed
+ * 
  * @author glen
- *  create IgnoreWordMap to store map with ignore words removed
  *
  */
 
@@ -21,8 +22,9 @@ public class IgnoreWordMap implements StrategyProcessText {
 	private Map<String,Integer> wordsRemoved;
 	
 	/**
-	 * method sortWords passed map of words and collection of words to ignore
-	 * method to compare words removed 
+	 * Method sortWords passed map and collection of words<br/>
+	 * ContextSort creates a new IgnoreWords object used to remove the ignore words<br/>
+	 * Returns wordsRemoved map
 	 */
 	
 	public Map<String,Integer> sortWords(Map<String,Integer> map, Collection<String> col){

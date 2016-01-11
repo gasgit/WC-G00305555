@@ -7,9 +7,10 @@ import org.jsoup.Jsoup;
 import org.jsoup.nodes.Document;
 
 	/**
+	 * Class to parse html page and return collection of words
 	 * 
 	 * @author glen
-	 *  class to parse html page and return collection of words
+	 *  
 	 *
 	 */
 
@@ -18,12 +19,12 @@ public class HTMLParser implements StrategyParse {
 	private static final int CHAR_MIN = 65;
 	private static final int CHAR_MAX = 122;
 	/**
-	 * method passed url as string
-	 * collection created to store words
-	 * uses jsoup to connect to the url and get document
-	 * uses jsuop to parse document to string
-	 * split strin int words  array
-	 * loop wordsa array remove non words and add to collection
+	 * Method passed url as string<br/>
+	 * Collection created to store words<br/>
+	 * Uses jsoup to connect to the url and get document<br/>
+	 * Uses jsuop to parse document to string<br/>
+	 * Split string into words array<br/>
+	 * Loop words array remove non words and add to collection
 	 */
 	
 	public Collection<String> parseHTML(String address) throws IOException{
@@ -61,10 +62,10 @@ public class HTMLParser implements StrategyParse {
 }  
 	
 	/**
-	 * method to process string
-	 * drop to lower case
-	 * check if char is a letter 
-	 * append to string builder and return
+	 * Method to process string<br/>
+	 * Drop to lower case<br/>
+	 * Check if char is a letter<br/>
+	 * Append to string builder and return<br/>
 	 * 
 	 * @param s
 	 * @return

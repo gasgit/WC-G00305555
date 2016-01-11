@@ -8,9 +8,9 @@ import java.util.ArrayList;
 import java.util.Collection;
 import java.util.List;
 	/**
-	 * 
+	 * Class to parse file and return collection of words
 	 * @author glen
-	 *  class fto parse file and return collection of words
+	 *  
 	 */
 
 
@@ -20,19 +20,22 @@ public class FileParser implements StrategyParse{
 	private static final int CHAR_MAX = 122;
 	
 	/**
-	 * method is passed file name
-	 * collection created as array list to store words
+	 * Method is passed file name<br/>
+	 * Collection created an arrayList to store words<br/>
+	 * BufferReader to stream file<br/>
+	 * @throws in case of file I/O error<br/>
 	 * 
 	 * 
 	 */
-	
-	
 	public Collection<String> parseFile(String file) throws IOException{
-		
+		// create collection
 		Collection<String> myCol = new ArrayList<>();
-		
+		// 
 		String line = null;
+		//
 		BufferedReader br = null;
+		
+		
 		try {
 			br = new BufferedReader(new InputStreamReader(new FileInputStream(file)));
 		} catch (Exception e) {
@@ -63,10 +66,10 @@ public class FileParser implements StrategyParse{
 	}
 
 	/**
-	 * method to process string
-	 * drop to lower case
-	 * check if char is a letter 
-	 * append to string builder and return
+	 * Method to process string<br/>
+	 * Set to lower case<br/>
+	 * Check if char is a letter<br/> 
+	 * Append to string builder and return<br/>
 	 * 
 	 * @param s
 	 * @return

@@ -1,4 +1,4 @@
-package ie.gmit.sw.Runner;
+	package ie.gmit.sw.Runner;
 
 import java.awt.Graphics;
 import java.awt.image.BufferedImage;
@@ -19,6 +19,17 @@ import ie.gmit.sw.process.IgnoreWordsCollection;
 import ie.gmit.sw.process.TextCollection;
 import ie.gmit.sw.process.WordFreqMap;
 import ie.gmit.sw.sort.ContextSort;
+
+
+
+/**
+ * Class containing methods fileCloud(), htmlCloud() to create the wordsRemoved map that is
+ * passed to the buildImage method.
+ * @see #buildImage() 
+ * 
+ * @author glen
+ *
+ */
 
 public class MethodRunner {
 	
@@ -98,17 +109,24 @@ public class MethodRunner {
 //
 //	
 //	}
-	
+	/**
+	 * Method to process html link to key value map of 
+	 * words and the frequency
+	 * 	
+	 * @throws IOException if file I/O occurs
+	 */
 	Map<String,Integer> htmlCloud() throws IOException{
 		
 		String url = "http://www.thejournal.ie";
 		String stopwords = "stopwords.txt";
 
-		
+		// craete new HtmlCollection cp 
 		cp = new ContextProcess(new HtmlCollection());
+		// pass the url, create collection and add to textCollection
 		textCollection = cp.createTextCollection(url);	
-		
+		// create new WordFreqMap
 		cp = new ContextProcess(new WordFreqMap());
+		// pass texCollection to fill map
 		textMap = cp.fillTextMap(textCollection);
 		
 		cp = new ContextProcess(new IgnoreWordsCollection());
@@ -119,15 +137,14 @@ public class MethodRunner {
 		
 		
 		
-		
-		
-		
-		
-		
-		
 	}
 	
-
+/**
+ * Method uses passes wordsRemoved map to CreateImage class to create the image<br/>
+ * The image is returned from a getter and added to the JFrame here
+ *  
+ * @throws IOException
+ */
 
 	void buildImage() throws IOException{
 		
@@ -152,6 +169,9 @@ public class MethodRunner {
         frame.add(pane);
 		
 	}
+	/**
+	 * Method to create a new JFrame to place a panel to place the image
+	 */
 	
 	private  JFrame buildFrame() {
 		
@@ -163,10 +183,16 @@ public class MethodRunner {
         return frame;
     }
 
-	
+	/**
+	 * Factory method allowing choice of method calls in the Menu Class
+	 * 
+	 */
 	public static MethodRunner createNewRunner() {
 		return new MethodRunner();
 	}
+	/**
+	 * Garbage collecting
+	 */
 
 	protected void finalize() throws Throwable {
 		super.finalize();

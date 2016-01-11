@@ -8,9 +8,9 @@ import ie.gmit.sw.sort.ContextSort;
 import ie.gmit.sw.sort.FrequencyCounter;
 
 /**
- * 
+ * Build a map to store words and frequency<br/>
  * @author glen
- * 	build a map to store words and frequency
+ * 	
  *
  */
 
@@ -19,11 +19,13 @@ public class WordFreqMap implements StrategyProcessText {
 	private ContextSort cs = new ContextSort(new FrequencyCounter());
 	private Map<String, Integer> textMap;
 	
-/**
- * method takes in a collection words
- * returns map with words and frequency
- */
-	
+	/**
+	 * Method is passed a collection words<br/>
+	 * Returns map with words and frequency<br/>
+	 * Calls the frequencyCounter() in FrequencyCounter Class<br/>
+	 * ContextSort is used to create a new FrequencyCounter object<br/>
+	 * Returns textMap of words and frequency<br/>
+	 */
 	public Map<String,Integer> fillTextMap(Collection<String> collection){
 		
 		 textMap = cs.frequencyCounter(collection);
@@ -32,7 +34,7 @@ public class WordFreqMap implements StrategyProcessText {
 		
 	}
 	
-	// 
+	 
 
 	public Collection<String> createIGCollection(String file) throws IOException {
 		return null;

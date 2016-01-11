@@ -2,12 +2,29 @@ package ie.gmit.sw.Runner;
 
 import java.util.Scanner;
 
+/**
+ * Class to create a menu to select which type of WordCloud to generate
+ * @author glen
+ *
+ */
+
+
+
 public class Menu {
+	
+	
 	
 	private static Scanner scan = new Scanner(System.in);  // for input with menu
 	
 	private MethodRunner rn = new MethodRunner();
-	
+	/**
+	 * 
+	 * Menu that allows selection to create WordCloud from file or url<br/>
+	 * Take input from user<br/>
+	 * Uses MethodRunner to select which methods<br/>
+	 * 
+	 * 
+	 */
 		public  int  showMenu() throws Exception
 		{	
 				

@@ -3,6 +3,13 @@ package ie.gmit.sw.parse;
 import java.io.IOException;
 import java.util.Collection;
 
+/**
+ * ContestParse to allow selecting which type of parser to use
+ * @author glen
+ *
+ */
+
+
 public class ContextParse {
 	
 	private StrategyParse strat;

@@ -8,25 +8,25 @@ import ie.gmit.sw.parse.ContextParse;
 import ie.gmit.sw.parse.FileParser;
 
 /**
- * 
+ * Build collection called textCollection to store words 
  * @author glen
  * 
- * build collection to store words from parsed file
  *
  */
-
 public class TextCollection implements StrategyProcessText {
 	
 	 ContextParse c = new ContextParse(new FileParser());
 	 Collection<String> textCollection;
 	
 	 
- /**
-  * method to parse file and return in collection
-  * 
-  */
-	
-
+	 /**
+	  * 
+	  * Method to parse file and return in collection
+	  * using the parseFile() method from FileParser class<br/>
+	  * ContextParse creates a new FileParser object<br/>
+	  * Returns textCollection
+	  * 
+	  */
 	public Collection<String> createTextCollection(String file) throws IOException{
 		 
 		textCollection = c.parseFile(file);

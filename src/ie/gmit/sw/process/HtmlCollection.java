@@ -8,10 +8,9 @@ import ie.gmit.sw.parse.ContextParse;
 import ie.gmit.sw.parse.HTMLParser;
 
 /**
- * 
+ * Build collection htmlCollection to store words from parsed url
  * @author glen
  * 
- * build collection to store parsed html page
  *
  */
 
@@ -23,14 +22,14 @@ public class HtmlCollection implements StrategyProcessText {
 	 ContextParse c = new ContextParse(new HTMLParser());
 	 Collection<String> htmlCollection;
  
- /**
-  * method is passed a url 
-  * url passed to parseHTML method
-  * returns map of words 
-  * 
-  */
-
-	 
+	 /**
+	  * 
+	  * Method to parse url and return the words only in collection
+	  * using the parseHTML() method from HTMLParser class<br/>
+	  * ContextParse creates a new HTMLParser object<br/>
+	  * Returns htmlCollection
+	  * 
+	  */
 	 
 	 public Collection<String> createTextCollection(String address) throws IOException{
 		 

@@ -23,7 +23,23 @@ import ie.gmit.sw.sort.ContextSort;
 import ie.gmit.sw.sort.FrequencyCounter;
 import ie.gmit.sw.sort.IgnoreWords;
 
+/**
+ * My Test Runner for testing purposes
+ * 
+ * @author glen
+ *
+ */
+
+
+
+
 public class TestRunner {
+	
+	/**
+	 * Main method to allow testing of different contexts and build image and frame
+	 * @param args
+	 * @throws IOException
+	 */
 	
 	
 	

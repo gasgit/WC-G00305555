@@ -9,16 +9,13 @@ import java.util.TreeMap;
 
 
 /**
- * 
+ * Build a map to store words and frequency
  * @author glen
  * 
  *
  * 
  *
  */
-
-
-
 
 public class FrequencyCounter implements StrategySort  {
 	
@@ -27,7 +24,12 @@ public class FrequencyCounter implements StrategySort  {
 	private Map<String,Integer> counted = new TreeMap<>();
 	
 /**
- *  method to check the frequency of the words in passed collection
+ *  Method to check the frequency of the words in passed collection<br>
+ *  Pass a collection of words<br>
+ *  Create new TreeMap called counted<br>
+ *  Create a set called unique and pass it the collection.<br> 
+ *  Iterate over unique and add key and frequency count to counted.<br>
+ *  Returns Counted
  * 
  */
 	
